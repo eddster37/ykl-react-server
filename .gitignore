@@ -25,5 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # files that just shouldn't be on there ;)
-fakeDB/data/data_users.js
-files
+/src/fakeDB/data/data_users.js
+/src/files
