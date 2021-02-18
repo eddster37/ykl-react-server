@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const fs = require('fs');
 
 //socket stuff
 const http = require("http");
@@ -197,11 +196,6 @@ io.on("connection", async (socket) => {
         socket.emit("setUpcomingDraftPlans", upcomingPlansStr.slice(0, -2));
     });
 
-    // interval = setInterval(() => {
-    //     const response = new Date();
-    //     io.emit("timer", response);
-    // }, 1000);
-
     socket.on('getComments', () => {
         io.emit("setComments", commentsArr[room]);
     });
@@ -262,12 +256,6 @@ io.on("connection", async (socket) => {
 
     socket.on("disconnect", () => {
         console.log("disconnected client " + room);
-        // fs.appendFile('server/files/test.txt', 'Contest test @ ' + Date.now(), (err) => {
-        //     if(err){
-        //         return console.log("ERROR: " + err);
-        //     }
-        //     return console.log("saved!");
-        // });
         clearInterval(interval);
     });
 });
