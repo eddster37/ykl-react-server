@@ -259,7 +259,3 @@ io.on("connection", async (socket) => {
         clearInterval(interval);
     });
 });
-
-server.listen(PORT, () => {
-    console.log('listening on port: ', PORT);
-});
