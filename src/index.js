@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
@@ -33,7 +34,6 @@ const { getUserWatchlist } = require('./controllers/controller_watchlist');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { provideErrorHandler } = require('./middlewares');
-require('dotenv').config();
 
 mongoose.connect(process.env.DB_HOST, {
     useNewUrlParser: true,
